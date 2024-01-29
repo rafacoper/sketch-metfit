@@ -1,0 +1,5 @@
+npm i express body-parser cookie-parser cors compression
+
+npm i -D @types/express @types/body-parser @types/cookie-parser @types/compression @types/cors
+
+npm i dotenv
