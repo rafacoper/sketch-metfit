@@ -1,7 +1,7 @@
 import { compare } from "bcrypt";
 import { encode } from "../helpers/jwt";
-import { getUserByEmailOrPhone } from "../models/user";
 import { UserRoles } from "../shared/roles/userRoles";
+import { findUserByAttribute } from "./user.service";
 
 export const signInService = async (
   phone: string,
@@ -10,7 +10,7 @@ export const signInService = async (
 ): Promise<any> => {
   const data = phone ? phone : email;
   
-  const user = await getUserByEmailOrPhone(data);
+  const user = await findUserByAttribute(data);
 
   if (!user) {
     return null;
