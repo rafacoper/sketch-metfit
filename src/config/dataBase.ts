@@ -1,13 +1,10 @@
-require("dotenv").config();
-
+import { env } from "./env";
 import mongoose from "mongoose";
 
 const connectToMongo = async () => {
   try {
-    const USER = process.env.USER;
-    const PASS = process.env.PASSWORD;
-    const MONGO_URL = `mongodb+srv://${USER}:${PASS}@cluster-antoninio.za6pzcl.mongodb.net/?retryWrites=true&w=majority`;
-
+    const MONGO_URL = `mongodb+srv://${env.USER}:${env.PASSWORD}@metdb.i92brbz.mongodb.net/?retryWrites=true&w=majority`
+    
     await mongoose.connect(MONGO_URL);
     
     console.log("Connected to Mongo");
