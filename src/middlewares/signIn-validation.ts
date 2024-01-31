@@ -1,10 +1,7 @@
 import { body, validationResult } from "express-validator";
 import { Request, Response, NextFunction } from "express";
 
-export const validateSignUpRequest = [
-  body("userName")
-    .isLength({ min: 4 })
-    .withMessage("Nome inválido"),
+export const validateSignInRequest = [
   body("email")
     .isEmail()
     .withMessage("Email inválido"),
